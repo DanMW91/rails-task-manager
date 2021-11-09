@@ -2,6 +2,7 @@
 <% @tasks.each do |task| %>
 <p><%= link_to "#{task.title}", task_path(task.id)%></p>
 <p>Completed: <%= "#{task.completed}" %></p>
+<%= link_to "Delete Task", delete_path(task.id), method: :delete, data: { confirm: 'Do you really want to?' } %>
 <% end %>
 
 <button><%= link_to "Add Task", tasks_new_path%></button>
